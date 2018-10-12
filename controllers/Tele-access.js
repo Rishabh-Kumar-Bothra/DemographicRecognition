@@ -1,6 +1,6 @@
 var axios = require('axios')
 
-var DemoRC = require("./demographic-recognition.js")
+var DemoRC = require("./demographic-recognition")
 
 const api_url = 'https://api.telegram.org/'
 
