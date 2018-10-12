@@ -59,7 +59,7 @@ async function getImageStream(FileID) {
 function displayOutput(data, incomingMessage) {
     axios.post(`${api_url}bot${process.env.BOT_TOKEN}/sendMessage`, {
         chat_id: incomingMessage.message.chat.id,
-        text: "Age " = data.Age ,"Gender "= data.Gender ,"Apperance " = data.Cultural_apperance, "Confidence " = _confidence*100 ,
+        text:  data.Age ,
         reply_to_message_id: incomingMessage.message.message_id
     })
     .catch((error) => {
