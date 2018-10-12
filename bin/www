@@ -8,6 +8,17 @@ var app = require('../app');
 var debug = require('debug')('telegram-bot:server');
 var http = require('http');
 
+
+
+
+if (process.env.NODE_ENV !== 'production') {
+  var result = require('dotenv').load();
+  
+  if(result.error) {
+      throw result.error;
+  }
+}
+
 /**
  * Get port from environment and store in Express.
  */

@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var dotenv = require('dotenv');
+
 
 var indexRouter = require('./routes/index');
 var update = require('./routes/updates')
@@ -12,7 +12,6 @@ var update = require('./routes/updates')
 var app = express();
 
 
-dotenv.load();
 
 app.use(logger('dev'));
 app.use(express.json());
