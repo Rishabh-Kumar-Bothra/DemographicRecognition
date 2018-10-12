@@ -17,7 +17,7 @@ router.post('/', validator.oneOf([
         
         Tele(req.body)
     } catch(err) {
-        debug('Incoming message not a photu')
+        console.log('Incoming message not a photu')
     }
 
     res.sendStatus(200)
