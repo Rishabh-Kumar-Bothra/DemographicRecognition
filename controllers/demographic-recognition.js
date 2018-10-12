@@ -15,13 +15,13 @@ module.exports = function(ImageStream) {
                 return reject(err)
             }
 
-            let apiAns = JSON.parse(body)
-            console.log(apiAns);
+            let output = JSON.parse(body)
+            console.log(output);
 
-            if(apiAns.err)
-                return reject(apiAns)
+            if(output.err)
+                return reject(output)
 
-            return resolve(apiAns)
+            return resolve(output)
         })
     })
 }
