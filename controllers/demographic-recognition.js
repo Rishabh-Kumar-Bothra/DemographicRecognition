@@ -1,5 +1,4 @@
 var request = require('request')
-var debug = require('debug')('controller/ColorImageController')
 
 module.exports = function(ImageStream) {
     return new Promise((resolve , reject ) => {
@@ -17,7 +16,7 @@ module.exports = function(ImageStream) {
             }
 
             let apiAns = JSON.parse(body)
-            debug(apiAns)
+            console.log(apiAns);
 
             if(apiAns.err)
                 return reject(apiAns)
