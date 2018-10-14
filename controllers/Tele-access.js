@@ -25,7 +25,10 @@ module.exports = function(incomingMessage) {
     .then((res) => {
         console.log("Sending photo to telegram")
 
-        displayOutput(res, incomingMessage)
+        displayOutput(res.Age, incomingMessage)
+        displayOutput(res.gender, incomingMessage)
+        displayOutput(res.confidence*100, incomingMessage)
+        displayOutput(res.cultural_apperance, incomingMessage)
     }) 
     .catch((err) => {   
         console.log("Error in coloring image")
@@ -58,7 +61,7 @@ async function getImageStream(FileID) {
 function displayOutput(data, incomingMessage) {
     axios.post(`${api_url}bot${process.env.BOT_TOKEN}/sendMessage`, {
         chat_id: incomingMessage.message.chat.id,
-        text:  data.Age ,
+        text:  data,
         reply_to_message_id: incomingMessage.message.message_id
     })
     .catch((error) => {
